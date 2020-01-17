@@ -7,12 +7,16 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
     <style>
-        .TextBox {
+        #TextBox {
             height: 50px;
             width: 50px;
             border-width: 1px;
             border-color: black;
             border-style: solid;
+        }
+        
+        #box {
+            display: inline;
         }
     </style>
 
@@ -21,16 +25,20 @@
 <body>
 
     TEXTBOX:
-    <div class="TextBox">0</div>
-    <button onClick="PLUS">+</button>
-    <button onClick="MIN">-</button>
-    <button onClick="RES">RESET</button>
+    <div id="TEXTBOX">0</div>
+    <button onclick="changeVAL('PLUS')" id="PLUS">+</button>
+    <button onclick="changeVAL('MIN')" id="MIN">-</button>
+    <button onclick="changeVAL('RES')">RESET</button>
+    <br>
+    <div id="box">
+        <span id="plusbox">0</span>
+        <span id="minbox">0</span>
+        <span id="resbox">0</span>
+    </div>
 
-
-    <script src='exc-1.js'></script>
 </body>
 
-
+<script src='exc-1.js'></script>
 
 
 </html>

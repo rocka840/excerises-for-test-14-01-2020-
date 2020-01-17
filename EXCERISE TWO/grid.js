@@ -7,18 +7,18 @@ function create() {
     generateG(rows, columns, colours); // Run/Call function to generate grid
 }
 
-function generateG(rows, columns, colours) {
-    var containers = document.getElementById("Container");
-    containers.innerHTML = null;
+function generateG(rows, columns, colours) { // Separate function to generate the table taking input values
+    var containers = document.getElementById("Container"); // Selects container to generate grid inside 
+    containers.innerHTML = null; // Empties container
 
-    for (let i = 0; i < Number(rows); i++) {
-        var CurrentR = document.createElement("div");
-        for (let x = 0; x < Number(columns); x++) {
-            var CurrentC = document.createElement("div");
-            CurrentC.classList.add(colours);
-            CurrentC.classList.add("BOX");
-            CurrentR.appendChild(CurrentC);
+    for (let i = 0; i < Number(rows); i++) { // Loops through the table rows
+        var CurrentR = document.createElement("div"); // Creates a div for the current row
+        for (let x = 0; x < Number(columns); x++) { // Loops through each cell(column) in the row
+            var CurrentC = document.createElement("div"); // Generates cell
+            CurrentC.classList.add(colours); // Adds selected color to cell
+            CurrentC.classList.add("BOX"); // Adds default box class containing width etc.
+            CurrentR.appendChild(CurrentC); // Adds cell to current row
         };
-        containers.appendChild(CurrentR);
+        containers.appendChild(CurrentR); // Adds current row to container
     }
 }
